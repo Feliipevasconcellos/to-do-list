@@ -32,10 +32,10 @@ Uma aplicação simples, leve e responsiva de lista de tarefas, construída com 
 
 ## 📦 Como rodar localmente
 
-git clone https://github.com/seu-usuario/to-do-list.git
+git clone https://github.com/Feliipevasconcellos/to-do-list.git
 
 cd to-do-list
 
 📄 Licença
 Este projeto está licenciado sob a MIT License.
-Desenvolvido por [Seu Nome ou GitHub]
+Desenvolvido por Feliipevasconcellos
