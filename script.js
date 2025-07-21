@@ -75,3 +75,30 @@ taskInput.addEventListener("keypress", (e) => {
     addTask();
   }
 });
+
+function saveTasks() {
+  const tasks = [];
+  taskList.querySelectorAll("li").forEach((li) => {
+    tasks.push({
+      text: li.querySelector("span").textContent,
+      complete: li.classList.contains("complete"),
+    });
+  });
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem("tasks"));
+  if (tasks) {
+    tasks.forEach((task) => {
+      const taskElement = createTaskElement(task);
+      taskList.appendChild(taskElement);
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadThemePreference();
+  loadTasks();
+});
