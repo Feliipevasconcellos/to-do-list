@@ -196,3 +196,40 @@ h1 {
 .task-list li.deleting {
     animation: fade-slide-out 0.5s forwards;
 }
+
+@keyframes fade-slide-out {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+        max-height: 100px;
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(50px);
+        max-height: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+}
+
+.task-list li span {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.task-list .delete-btn {
+    background: none;
+    border: none;
+    color: var(--delete-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-left: 1rem;
+}
+
+.task-list .delete-btn:hover {
+    color: #ff1a1a;
+}
