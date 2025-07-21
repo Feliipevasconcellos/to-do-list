@@ -22,3 +22,56 @@ function loadThemePreference() {
     themeToggle.checked = false;
   }
 }
+
+function createTaskElement(task) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+        <span>${task.text}</span>
+        <button class="delete-btn">&times;</button>
+    `;
+  if (task.complete) {
+    li.classList.add("complete");
+  }
+
+  li.querySelector("span").addEventListener("click", () => {
+    li.classList.toggle("complete");
+    saveTasks();
+  });
+
+  li.querySelector(".delete-btn").addEventListener("click", () => {
+    li.classList.add("deleting");
+    li.addEventListener(
+      "animationend",
+      () => {
+        li.remove();
+        saveTasks();
+      },
+      { once: true }
+    );
+  });
+  return li;
+}
+
+function addTask() {
+  const taskText = taskInput.value.trim();
+  if (taskText === "") {
+    alert("Plese write a task.");
+    return;
+  }
+
+  const newTask = {
+    text: taskText,
+    completed: false,
+  };
+
+  const taskElement = createTaskElement(newTask);
+  taskList.appendChild(taskElement);
+  taskInput.value = "";
+  saveTasks();
+}
+
+taskInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTask();
+  }
+});
