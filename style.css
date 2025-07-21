@@ -1,0 +1,59 @@
+/* Light Mode */
+:root {
+    --bg-color: #f4f7f6;
+    --container-bg: #fff;
+    --text-color: #333;
+    --list-bg: #f9f9f9;
+    --border-color: #ccc;
+    --blue-accent: #007bff;
+    --completed-bg: #e9f5e9;
+    --delete-color: #ff4d4d;
+    --toggle-bg: #ddd;
+    --toggle-handle-bg: #fff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --container-bg: #2a2a2a;
+    --text-color: #e0e0e0;
+    --list-bg: #333333;
+    --border-color: #444;
+    --blue-accent: #66b2ff;
+    --completed-bg: #2c4a2c;
+    --delete-color: #ff6666;
+    --toggle-bg: #666;
+    --toggle-handle-bg: #fff;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.toggle-switch-container {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
