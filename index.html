@@ -4,15 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="sytle.css">
 </head>
 
 <body>
     <div class="toggle-switch-container">
-        <label class="toggle switch">
-            <input type="checkbox">
+        <label class="toggle-switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
         </label>
     </div>
+
+    <div class="todo-container">
+        <h1>To-Do List</h1>
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <div class="task-list-container">
+            <ul class="task-list" id="taskList"></ul>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
